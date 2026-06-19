@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Ocari | Creative App & Game Design Studio</title>
+  <meta name="description" content="Atelier Ocari（アトリエオカリ）は、独創的なゲームアプリ「カオス・アカデミー」やモバイル向けマークダウンエディタ「Mditer」などの開発を手がける個人のクリエイティブ・デザインスタジオです。">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/atelier_ocari_logo_lineart_vertical.svg">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo-link" id="nav-logo">
+        <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .logo-text { font-family: "Cormorant Garamond", serif; font-size: 36px; text-anchor: middle; fill: currentColor; }
+            .logo-subtext { font-family: "Outfit", sans-serif; font-size: 11px; text-anchor: middle; fill: currentColor; opacity: 0.6; letter-spacing: 0.3em; text-transform: uppercase; }
+          </style>
+          <g transform="translate(25, 20)">
+            <path d="M 40,165 C 30,158 32,143 50,137 C 95,122 175,85 220,53 C 230,46 242,42 248,46 C 255,50 263,70 285,108 C 300,132 335,145 335,168 C 335,190 295,200 255,200 C 180,200 85,185 40,165 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="245" cy="77" r="12" fill="none" stroke="currentColor" stroke-width="6" />
+            <circle cx="285" cy="158" r="18" fill="none" stroke="currentColor" stroke-width="6" />
+          </g>
+          <text x="200" y="270" class="logo-text">atelier ocari</text>
+          <text x="204" y="300" class="logo-subtext">DESIGN STUDIO</text>
+        </svg>
+        <span>Atelier Ocari</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about" id="link-about">About</a></li>
+          <li><a href="#products" id="link-products">Products</a></li>
+          <li><a href="#contact" id="link-contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-logo-container">
+      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .logo-text-hero { font-family: "Cormorant Garamond", serif; font-size: 36px; text-anchor: middle; fill: currentColor; }
+          .logo-subtext-hero { font-family: "Outfit", sans-serif; font-size: 11px; text-anchor: middle; fill: currentColor; opacity: 0.6; letter-spacing: 0.3em; text-transform: uppercase; }
+        </style>
+        <g transform="translate(25, 20)">
+          <path d="M 40,165 C 30,158 32,143 50,137 C 95,122 175,85 220,53 C 230,46 242,42 248,46 C 255,50 263,70 285,108 C 300,132 335,145 335,168 C 335,190 295,200 255,200 C 180,200 85,185 40,165 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="245" cy="77" r="12" fill="none" stroke="currentColor" stroke-width="6" />
+          <circle cx="285" cy="158" r="18" fill="none" stroke="currentColor" stroke-width="6" />
+        </g>
+        <text x="200" y="270" class="logo-text-hero">atelier ocari</text>
+        <text x="204" y="300" class="logo-subtext-hero">DESIGN STUDIO</text>
+      </svg>
+    </div>
+    <h1>Creating <span>Intuitive</span> Experiences</h1>
+    <p class="hero-subtitle">美しさと使いやすさを追求し、心に残るデジタルプロダクトを創造するクリエイティブ・デザインスタジオ</p>
+    <a href="#products" class="btn-primary" id="btn-discover">Discover Our Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Studio</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>独創的なアイデアをカタチに</h3>
+          <p>
+            Atelier Ocari（アトリエオカリ）は、モバイルアプリケーション、インディーゲーム、デジタル体験の設計・開発を行う、日本・東京を拠点とした個人クリエイティブスタジオです。
+          </p>
+          <p>
+            私たちは、洗練されたビジュアル、滑らかなアニメーション、そしてユーザーの直感に寄り添った設計の融合を目指しています。複雑なロジックをシンプルで美しいインターフェースへと落とし込み、人々の日常や体験を豊かにするツールを提供します。
+          </p>
+        </div>
+        <div class="about-info-card">
+          <div class="info-item">
+            <span class="info-label">組織名 / Studio Name</span>
+            <span class="info-value">Atelier Ocari (アトリエオカリ)</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">代表者 / Representative</span>
+            <span class="info-value">a5ro5a (個人事業主 / Sole Proprietorship)</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">活動内容 / Focus</span>
+            <span class="info-value">モバイルアプリ設計・開発、インディーゲーム制作、UI/UXデザイン</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">所在地 / Location</span>
+            <span class="info-value">日本、東京都 / Tokyo, Japan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <div class="container">
+      <h2 class="section-title">Our <span>Products</span></h2>
+      <div class="product-grid">
+        <!-- Chaos Academy -->
+        <div class="product-card">
+          <div>
+            <div class="product-header">
+              <div class="product-title-group">
+                <h3>Chaos Academy</h3>
+                <span class="product-tag">Game / RPG</span>
+              </div>
+            </div>
+            <p class="product-desc">
+              アカデミーの個性豊かな生徒たちと共に、日々のトレーニングやバトル、成長を体験するモバイルRPG。美しいアニメーション、直感的なUIデザイン、充実した通知システムにより、いつでも仲間との絆を感じられるゲームプレイを提供します。
+            </p>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">
+              Coming Soon
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- Mditer -->
+        <div class="product-card">
+          <div>
+            <div class="product-header">
+              <div class="product-title-group">
+                <h3>Mditer</h3>
+                <span class="product-tag">Productivity / Editor</span>
+              </div>
+            </div>
+            <p class="product-desc">
+              シンプルさと美しさを極限まで高めたモバイル向けMarkdownテキストエディタ。余計な要素を削ぎ落としたインターフェースで、思考の妨げにならない執筆環境を提供します。プライバシーを重視した安全なファイル管理が特徴です。
+            </p>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">
+              Released
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in <span>Touch</span></h2>
+      <div class="contact-container">
+        <div class="contact-card">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">お名前 / Name</label>
+              <input type="text" id="name" required placeholder="山田 太郎">
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス / Email Address</label>
+              <input type="email" id="email" required placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="subject">件名 / Subject</label>
+              <input type="text" id="subject" required placeholder="サポート・お問い合わせ内容">
+            </div>
+            <div class="form-group">
+              <label for="message">メッセージ / Message</label>
+              <textarea id="message" rows="6" required placeholder="メッセージをご入力ください。"></textarea>
+            </div>
+            <button type="submit" id="btn-submit">送信する / Send Message</button>
+            <div class="contact-feedback" id="formFeedback">
+              お問い合わせを受け付けました。ご入力いただいたアドレス宛てに追ってご連絡いたします。
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-copyright">
+        &copy; 2026 <span>Atelier Ocari</span>. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html" id="link-privacy">Privacy Policy</a>
+        <a href="terms.html" id="link-terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // 送信先メールアドレス（必要に応じて変更してください）
+      const emailTo = 'support@a5ro5a.github.io';
+      
+      const body = `お名前: ${name}\nメールアドレス: ${email}\n\n【お問い合わせ内容】\n${message}`;
+      const mailtoUrl = `mailto:${emailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // メールクライアントを起動
+      window.location.href = mailtoUrl;
+      
+      // 送信フィードバックの表示
+      const feedback = document.getElementById('formFeedback');
+      feedback.textContent = 'メールソフトを起動しています。送信内容をご確認の上、送信してください。';
+      feedback.classList.add('success');
+      
+      // フォームのクリア
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('subject').value = '';
+      document.getElementById('message').value = '';
+      
+      setTimeout(() => {
+        feedback.classList.remove('success');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
