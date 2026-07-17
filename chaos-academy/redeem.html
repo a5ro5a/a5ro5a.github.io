@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カオス学園 - シリアルコード引き換え</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #050505;
+            --bg-secondary: #0f0f0f;
+            --bg-tertiary: #1a1a1a;
+            --fg-primary: #f5f5f5;
+            --fg-secondary: #a1a1aa;
+            --fg-tertiary: #71717a;
+            --accent-gold: #f59e0b;
+            --accent-glow-gold: rgba(245, 158, 11, 0.3);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #0f0f0f 0%, #030303 100%);
+            color: var(--fg-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 1.5rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 460px;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 1.5rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8),
+                        0 0 50px -10px rgba(245, 158, 11, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.4));
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--fg-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 1.5rem 1.25rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--fg-secondary);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem 0.875rem 2.75rem;
+            color: var(--fg-primary);
+            outline: none;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+        }
+
+        .input-wrapper input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .easy-redeem-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #000;
+            border: none;
+            padding: 1.1rem;
+            border-radius: 0.75rem;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .easy-redeem-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.5);
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+
+        .easy-redeem-button:active {
+            transform: translateY(0);
+        }
+
+        .easy-redeem-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .instructions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .instruction-item {
+            color: var(--fg-tertiary);
+            font-size: 0.75rem;
+            line-height: 1.5;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .instruction-item::before {
+            content: "•";
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo-container">
+                <span class="logo-icon">🎁</span>
+            </div>
+            <h1 class="title">カオス学園</h1>
+            <p class="subtitle">シリアルコード引き換え所</p>
+        </div>
+
+        <div class="section">
+            <div class="input-group">
+                <label htmlFor="giftCode">シリアルコード</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">🔑</span>
+                    <input
+                        id="giftCode"
+                        type="text"
+                        placeholder="WELCOME2026"
+                        autocomplete="off"
+                    />
+                </div>
+            </div>
+
+            <button class="easy-redeem-button" id="launchButton">
+                アプリを起動して適用
+            </button>
+        </div>
+
+        <div class="instructions">
+            <div class="instruction-item">本機能はスマートフォン（iOS/Android）端末専用です。</div>
+            <div class="instruction-item">事前に「カオス学園」アプリがインストールされている必要があります。</div>
+            <div class="instruction-item">アプリ起動後、ログイン済みのキャラクターへ自動的に報酬がプレゼントボックスに付与されます。</div>
+            <div class="instruction-item">学籍番号（ユーザーID）を手動で入力・コピーする必要はありません。</div>
+        </div>
+    </div>
+
+    <script>
+        const giftCodeInput = document.getElementById('giftCode');
+        const launchButton = document.getElementById('launchButton');
+
+        // URLパラメータからcodeを取得して初期入力
+        function initCodeFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const codeParam = urlParams.get('code');
+            if (codeParam) {
+                giftCodeInput.value = codeParam.trim().toUpperCase();
+            }
+            updateButtonState();
+        }
+
+        function updateButtonState() {
+            const hasCode = giftCodeInput.value.trim().length > 0;
+            launchButton.disabled = !hasCode;
+        }
+
+        // 入力時のバリデーション（大文字に強制変換など）
+        giftCodeInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.toUpperCase();
+            updateButtonState();
+        });
+
+        // アプリ起動（ディープリンク）
+        launchButton.addEventListener('click', () => {
+            const code = giftCodeInput.value.trim();
+            if (!code) return;
+
+            const deepLink = 'chaosacademy://redeem?code=' + encodeURIComponent(code);
+            window.location.href = deepLink;
+        });
+
+        // 初期化実行
+        initCodeFromUrl();
+    </script>
+</body>
+</html>
