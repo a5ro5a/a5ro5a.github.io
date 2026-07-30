@@ -3,45 +3,837 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>カオス学園 - 公式サポートサイト</title>
+    <title>カオス学園 (Chaos Academy) - 公式サイト | Atelier Ocari</title>
+    <meta name="description" content="遊んだ時間が、現実の「価値」に変わる！育成 × バトル × ポイ活 が融合した新感覚の学園RPG『カオス学園』公式サイト。iOS/Androidにて好評配信中！">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="カオス学園 (Chaos Academy) - 公式サイト">
+    <meta property="og:description" content="学園生活をエンジョイしながら最強の生徒を育成！単位や成果を現金やデジタルギフトに交換できる次世代ポイ活学園RPG！">
+    <meta property="og:image" content="assets/images/feature_graphic.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/app_icon_512.png">
+
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #f9f9f9; }
-        .container { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { color: #d32f2f; border-bottom: 2px solid #d32f2f; padding-bottom: 10px; }
-        .download-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 15px; margin-bottom: 30px; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; background: #333; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.2s; min-width: 200px; }
-        .btn:hover { background: #111; }
-        .btn-appstore { background: #000; }
-        .btn-googleplay { background: #000; border: 1px solid #eee; }
-        .footer { margin-top: 40px; font-size: 0.8em; color: #888; text-align: center; }
-        a { color: #d32f2f; }
+        :root {
+            --bg-dark: #07070b;
+            --bg-card: #11111a;
+            --bg-card-hover: #181826;
+            --accent-red: #e53935;
+            --accent-red-glow: rgba(229, 57, 53, 0.4);
+            --accent-gold: #ffb300;
+            --accent-gold-glow: rgba(255, 179, 0, 0.35);
+            --accent-purple: #8e24aa;
+            --text-main: #f3f4f6;
+            --text-sub: #9ca3af;
+            --text-muted: #6b7280;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --max-width: 1140px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(229, 57, 53, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(142, 36, 170, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 50% 90%, rgba(255, 179, 0, 0.1) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 7, 11, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: opacity 0.2s;
+        }
+
+        .brand-link:hover {
+            opacity: 0.85;
+        }
+
+        .brand-app-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent-red), #b71c1c);
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent-gold), #f57c00);
+            color: #000 !important;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 14px var(--accent-gold-glow);
+            transition: transform 0.2s, box-shadow 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--accent-gold-glow) !important;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 70px 0 50px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 48px;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 179, 0, 0.15);
+            border: 1px solid rgba(255, 179, 0, 0.35);
+            color: #ffca28;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            width: fit-content;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 30%, #ffd54f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            line-height: 1.7;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .btn-store {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #161622;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-store:hover {
+            background: #202032;
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--accent-gold-glow);
+        }
+
+        .btn-store svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .btn-store-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .btn-store-text .sub {
+            font-size: 0.7rem;
+            color: var(--text-sub);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        /* Hero Visual Showcase */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visual-card {
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px var(--accent-gold-glow);
+            background: #141420;
+            transition: transform 0.4s ease;
+        }
+
+        .visual-card:hover {
+            transform: scale(1.02);
+        }
+
+        .visual-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* Update Announcement Banner */
+        .update-banner {
+            padding: 30px 0 50px;
+        }
+
+        .update-box {
+            background: rgba(229, 57, 53, 0.12);
+            border: 1px solid rgba(229, 57, 53, 0.3);
+            border-radius: 16px;
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .update-badge {
+            background: var(--accent-red);
+            color: #fff;
+            font-weight: 800;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .update-text {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* Video Section */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .section-title span {
+            color: var(--accent-gold);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-sub);
+            margin-bottom: 48px;
+            font-size: 1.05rem;
+        }
+
+        .video-section {
+            padding: 70px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background: #0d0d14;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(7, 7, 11, 0.35), rgba(7, 7, 11, 0.75)), url('assets/images/feature_graphic.png') center/cover no-repeat;
+            position: relative;
+        }
+
+        .video-overlay-play {
+            width: 84px;
+            height: 84px;
+            background: linear-gradient(135deg, var(--accent-gold), #f57c00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 35px var(--accent-gold-glow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            outline: none;
+        }
+
+        .video-overlay-play:hover {
+            transform: scale(1.12);
+            box-shadow: 0 0 50px var(--accent-gold-glow);
+        }
+
+        .video-overlay-play svg {
+            width: 34px;
+            height: 34px;
+            fill: #000;
+            margin-left: 4px;
+        }
+
+        .video-caption {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.6);
+            padding: 6px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 70px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-red));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .feature-desc {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Redeem Banner Section */
+        .redeem-banner {
+            padding: 60px 0;
+        }
+
+        .redeem-card {
+            background: linear-gradient(135deg, rgba(255, 179, 0, 0.18) 0%, rgba(229, 57, 53, 0.18) 100%);
+            border: 1px solid rgba(255, 179, 0, 0.35);
+            border-radius: 24px;
+            padding: 48px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            flex-wrap: wrap;
+        }
+
+        .redeem-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 600px;
+        }
+
+        .redeem-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .redeem-desc {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        .btn-redeem {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent-gold), #f57c00);
+            color: #000;
+            padding: 16px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px var(--accent-gold-glow);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-redeem:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--accent-gold-glow);
+            background: linear-gradient(135deg, #ffca28, var(--accent-gold));
+        }
+
+        /* Support / Contact Section */
+        .support-section {
+            padding: 70px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .support-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .support-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .support-col p {
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .contact-email:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .link-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-list a {
+            color: var(--accent-red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .link-list a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 32px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: #040407;
+        }
+
+        footer a {
+            color: var(--text-sub);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 0;
+            }
+
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .support-card {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .redeem-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .update-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>カオス学園 (Chaos Academy)</h1>
-        <p>「カオス学園」をご利用いただきありがとうございます。</p>
-        
-        <h2>アプリの概要</h2>
-        <p>カオス学園は、日々の課題やアルバイト、そしてライバルとのバトルを通じて学園生活を楽しむシミュレーションゲームです。クイズに答えて報酬をゲットし、最強の学園生を目指しましょう。</p>
 
-        <h2>ダウンロード</h2>
-        <div class="download-buttons">
-            <a href="https://apps.apple.com/app/%E3%82%AB%E3%82%AA%E3%82%B9%E5%AD%A6%E5%9C%92/id6787948904" class="btn btn-appstore" target="_blank">App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.a5ro5a.chaosAcademy" class="btn btn-googleplay" target="_blank">Google Play</a>
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="../" class="brand-link">
+                <img src="assets/images/app_icon_512.png" alt="カオス学園 Icon" class="brand-app-icon">
+                <span>Atelier Ocari</span>
+                <span class="brand-badge">カオス学園</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">特徴</a></li>
+                <li><a href="#trailer">PV動画</a></li>
+                <li><a href="#support">サポート</a></li>
+                <li><a href="redeem.html" class="nav-cta">シリアルコード</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span>💰</span> 育成 × バトル × ポイ活 RPG
+                </div>
+                <h1 class="hero-title">遊んだ時間が、<br>現実の「価値」に変わる！</h1>
+                <p class="hero-description">
+                    「カオス学園 (Chaos Academy)」は、学園生活をエンジョイしながら最強の生徒を育成する新感覚RPG！全国のライバルと白熱の学力バトルを繰り広げ、ゲームで獲得した「単位」や成果を現実の現金やデジタルギフトに交換申請しよう！
+                </p>
+                <div class="download-buttons">
+                    <a href="https://apps.apple.com/app/%E3%82%AB%E3%82%AA%E3%82%B9%E5%AD%A6%E5%9C%92/id6787948904" class="btn-store" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 384 512">
+                            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-13.7 69.5-34.3z"/>
+                        </svg>
+                        <div class="btn-store-text">
+                            <span class="sub">Download on the</span>
+                            <span>App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.a5ro5a.chaosAcademy" class="btn-store" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256.6L47 0zm425.2 225.6l-58.9-34.1-65.7 65.7 65.7 65.7 59.2-34.1c18-10.3 18-42.9-.3-53.2zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/>
+                        </svg>
+                        <div class="btn-store-text">
+                            <span class="sub">GET IT ON</span>
+                            <span>Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <img src="assets/images/feature_graphic.png" alt="カオス学園 公式メインイラスト">
+                </div>
+            </div>
+        </section>
+
+        <!-- Update Banner -->
+        <div class="update-banner container">
+            <div class="update-box">
+                <div class="update-badge">NEW UPDATE</div>
+                <div class="update-text">
+                    <strong>【大型アプデ！】</strong> 待望の「英語選択」＆「漢字テスト」が新登場！漢字テストを解いて強力なバトルバフをGET！学友招待コードで友達と一緒にプレイ！
+                </div>
+            </div>
         </div>
 
-        <h2>サポート・お問い合わせ</h2>
-        <p>アプリに関する不具合報告、ご要望、お問い合わせは以下のメールアドレスまでお願いいたします。</p>
-        <p><strong>メールアドレス:</strong> atelierocari@gmail.com</p>
-        
-        <h2>リンク</h2>
-        <ul>
-            <li><a href="privacy.html">プライバシーポリシー</a></li>
-        </ul>
-    </div>
-    <div class="footer">
-        &copy; 2026 atelierocari. All Rights Reserved.
-    </div>
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2 class="section-title">カオス学園の <span>4大魅力</span></h2>
+                <p class="section-subtitle">「遊ぶだけ」から「遊んで豊かになる」次世代のゲーム体験へ！</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3 class="feature-title">遊ぶだけでお小遣い稼ぎ！</h3>
+                        <p class="feature-desc">
+                            毎日の学園生活やバトルで集めた「単位」や成果は、現実の現金やデジタルギフトへ交換申請が可能！遊べば遊ぶほど貯まる安心システム。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">✏️</div>
+                        <h3 class="feature-title">自由度MAXの生徒育成</h3>
+                        <p class="feature-desc">
+                            「食事」で体力をつけ、「部活動」で腕を磨き、「なでなで」で愛着アップ！装備カスタマイズ＆パーツ別カラー染色機能で自分だけの生徒をメイキング。
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3 class="feature-title">リアルタイム学力バトル</h3>
+                        <p class="feature-desc">
+                            漢字テストや英語問題でバトルバフをGET！見た目が反映されるスキルカットイン＆HP割合で変化する決着アクションで白熱対戦！
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3 class="feature-title">ランキング & ソーシャル</h3>
+                        <p class="feature-desc">
+                            単位や戦闘力を競う「全国ランキング」！フレンドとの挨拶ボーナスや「学友招待コード」で仲間と一緒に効率よくポイ活を楽しもう！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Trailer Section -->
+        <section id="trailer" class="video-section">
+            <div class="container">
+                <h2 class="section-title">公式 <span>プロモーションムービー</span></h2>
+                <p class="section-subtitle">カオス学園の世界観とゲームプレイをムービーでチェック！</p>
+
+                <div class="video-wrapper">
+                    <div class="video-container" id="videoContainer">
+                        <button class="video-overlay-play" id="playBtn" aria-label="動画を再生">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                        <div class="video-caption">Chaos Academy Official Trailer</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serial Code Redeem Banner -->
+        <section class="redeem-banner container">
+            <div class="redeem-card">
+                <div class="redeem-info">
+                    <h2 class="redeem-title">🎁 シリアルコードをお持ちですか？</h2>
+                    <p class="redeem-desc">
+                        公式イベントやキャンペーンで配布されたシリアルコードを入力して、アプリ内で使える特別なプレゼントを今すぐ受取りましょう！
+                    </p>
+                </div>
+                <a href="redeem.html" class="btn-redeem">
+                    引き換えページへ移動 ➔
+                </a>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section id="support" class="support-section">
+            <div class="container">
+                <h2 class="section-title">サポート <span>& お問い合わせ</span></h2>
+                <p class="section-subtitle">ご不明な点や不具合報告はこちらまでご連絡ください</p>
+
+                <div class="support-card">
+                    <div class="support-col">
+                        <h3>お問い合わせ先</h3>
+                        <p>
+                            アプリに関する不具合報告、ご要望、ご質問は下記メールアドレスまでお願いいたします。
+                        </p>
+                        <a href="mailto:atelierocari@gmail.com" class="contact-email">
+                            📧 atelierocari@gmail.com
+                        </a>
+                    </div>
+                    <div class="support-col">
+                        <h3>関連規約 & リンク</h3>
+                        <p>ご利用の前にプライバシーポリシーをご確認ください。</p>
+                        <ul class="link-list">
+                            <li><a href="privacy.html">🔒 プライバシーポリシー (Privacy Policy)</a></li>
+                            <li><a href="../privacy.html">Studio プライバシーポリシー</a></li>
+                            <li><a href="../terms.html">利用規約 (Terms of Service)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Atelier Ocari. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Video Interaction Script -->
+    <script>
+        document.getElementById('playBtn').addEventListener('click', function() {
+            const container = document.getElementById('videoContainer');
+            container.innerHTML = `
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/dfn_TFycoc0?autoplay=1&rel=0" 
+                    title="カオス学園 Official Trailer" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            `;
+        });
+    </script>
 </body>
 </html>
