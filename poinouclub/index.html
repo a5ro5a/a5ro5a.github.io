@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>脳トレポイ活理論 - 公式サイト | Atelier Ocari</title>
+  <meta name="description" content="毎日の脳トレを、確かな成果と楽しみに。パズル・計算などの多彩な頭脳トレーニングとポイ活理論が融合した新感覚アプリ『脳トレポイ活理論 (poinouclub)』公式サポートサイト。">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/atelier_ocari_logo_lineart_vertical.svg">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* アプリ専用のハイライトスタイル */
+    .app-hero {
+      padding: 140px 0 70px;
+      text-align: center;
+    }
+    .app-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      background: var(--accent-gold-glow);
+      border: 1px solid var(--border-hover);
+      margin-bottom: 24px;
+    }
+    .app-title {
+      font-family: var(--font-sans);
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .app-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+    .download-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: var(--border-radius-sm);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      min-width: 190px;
+    }
+    .btn-appstore {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .btn-appstore:hover {
+      background-color: #e6e6e6;
+      transform: translateY(-2px);
+    }
+    .btn-googleplay {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-googleplay:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 40px 0 70px;
+    }
+    .feature-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      padding: 32px 24px;
+      text-align: left;
+      transition: var(--transition-smooth);
+    }
+    .feature-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--accent-gold-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent-gold);
+      font-size: 24px;
+    }
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .support-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      padding: 36px;
+      margin-bottom: 70px;
+    }
+    .support-card h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+    .support-card p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    .contact-email-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      background-color: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      font-family: monospace;
+      font-size: 15px;
+      color: var(--accent-gold);
+    }
+    .links-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .links-list li a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-size: 15px;
+      transition: var(--transition-smooth);
+    }
+    .links-list li a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .app-title {
+        font-size: 32px;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .app-hero {
+        padding: 110px 0 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo-link">
+        <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .logo-text { font-family: "Cormorant Garamond", serif; font-size: 36px; text-anchor: middle; fill: currentColor; }
+            .logo-subtext { font-family: "Outfit", sans-serif; font-size: 11px; text-anchor: middle; fill: currentColor; opacity: 0.6; letter-spacing: 0.3em; text-transform: uppercase; }
+          </style>
+          <g transform="translate(25, 20)">
+            <path d="M 40,165 C 30,158 32,143 50,137 C 95,122 175,85 220,53 C 230,46 242,42 248,46 C 255,50 263,70 285,108 C 300,132 335,145 335,168 C 335,190 295,200 255,200 C 180,200 85,185 40,165 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="245" cy="77" r="12" fill="none" stroke="currentColor" stroke-width="6" />
+            <circle cx="285" cy="158" r="18" fill="none" stroke="currentColor" stroke-width="6" />
+          </g>
+          <text x="200" y="270" class="logo-text">atelier ocari</text>
+          <text x="204" y="300" class="logo-subtext">DESIGN STUDIO</text>
+        </svg>
+        <span>Atelier Ocari</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#products">Products</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="container">
+        <span class="app-badge">Brain Training & Points</span>
+        <h1 class="app-title">脳トレポイ活理論</h1>
+        <p class="app-subtitle">
+          毎日のスキマ時間を確かな充実感へ。<br>
+          計算・記憶・パズルといった直感的な頭脳トレーニングとポイ活理論が融合！<br class="hidden-mobile">
+          さらに『カオス学園』との連携で、アバター表示・ポイント交換・ランキングも楽しめます。
+        </p>
+
+        <!-- Download Buttons -->
+        <div class="download-buttons">
+          <a href="https://apps.apple.com/app/%E8%84%B3%E3%83%88%E3%83%AC%E3%83%9D%E3%82%A4%E6%B4%BB%E7%90%86%E8%AB%96/id6813758796" class="btn-store btn-appstore" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.64 1.36-.58.67-.99 1.74-.86 2.76 1.01.08 2.04-.52 2.57-1.27z"/>
+            </svg>
+            App Store
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.chaosacademy.poinouclub" class="btn-store btn-googleplay" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.373 2.373 0 0 1-.61-.954V2.768c.16-.364.382-.693.609-.954zm11.24 11.24l2.454 2.455-12.79 7.37 10.336-9.825zm2.455-2.454l-2.455 2.454L4.513 3.23l12.79 7.37zM18.824 12l-1.994-1.15 2.265-2.265c.57.57.905 1.348.905 2.193 0 .845-.335 1.623-.905 2.193L18.824 12z"/>
+            </svg>
+            Google Play
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container">
+      <h2 class="section-title">App <span>Features</span></h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>手軽に挑める多彩な脳トレ</h3>
+          <p>計算、記憶、瞬発力、パズルなど多彩なジャンルのミニゲームを収録。1プレイ数分からサクッと挑戦できるため、通勤・通学中や休憩時間の頭の体操に最適です。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>ポイ活理論 × 継続の仕組み</h3>
+          <p>日々のトレーニング継続やミッションクリアで成果を実感。目標達成型のモチベーション設計により、三日坊主にならず毎日楽しく習慣化できます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <h3>カオス学園連携（アバター・ポイント・ランキング）</h3>
+          <p>人気作『カオス学園』とデータ連携！カオス学園のアバター表示や、脳トレで獲得したポイントの交換、全国のプレイヤーと競い合えるランキング機能で白熱したプレイが楽しめます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>洗練された操作性とデザイン</h3>
+          <p>シンプルで迷わない洗練されたインターフェース。複雑な設定なしですぐに始められ、誰でもストレスフリーにプレイできます。</p>
+        </div>
+      </div>
+
+      <!-- Support & Contact Card -->
+      <div class="support-card">
+        <h2>サポート・お問い合わせ</h2>
+        <p>「脳トレポイ活理論」をご利用いただき誠にありがとうございます。アプリの不具合報告、改善要望、ご質問等がございましたら、下記窓口までお気軽にお問い合わせください。</p>
+        <div class="contact-email-box">
+          ✉️ atelierocari@gmail.com
+        </div>
+        <ul class="links-list">
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../chaos-academy">『カオス学園』公式サイト</a></li>
+          <li><a href="../index.html">Atelier Ocari トップページ</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-copyright">
+        &copy; 2026 <span>Atelier Ocari</span>. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
